@@ -44,7 +44,7 @@ const resolvers = {
         }
   
         try {
-          const resource = await Product.findById(productId);
+          const product = await Product.findById(productId);
           if (!product) {
             throw new Error("Product not found");
           }
