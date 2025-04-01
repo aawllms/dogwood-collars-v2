@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Form,
-  Button,
-  Modal,
-  Tab,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Auth from "../utils/Auth";
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const CombinedNavbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -35,21 +26,16 @@ const CombinedNavbar = () => {
               <Nav.Link as={Link} to="/about-us">
                 About Us
               </Nav.Link>
+              <Nav.Link as={Link} to="/contact-us">
+                Contact Us
+              </Nav.Link>
               <Nav.Link as={Link} to="/products">
                 Products
               </Nav.Link>
             </Nav>
-
-            {/* <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form> */}
-            <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
+            <Nav.Link as={Link} to="/cart">
+              Cart
+            </Nav.Link>
             <Nav className="ml-auto d-flex">
               {Auth.loggedIn() ? (
                 <>

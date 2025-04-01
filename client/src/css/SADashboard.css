@@ -1,0 +1,11 @@
+.sa-dashboard-container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.user-management,
+.product-management {
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 15px;
+}

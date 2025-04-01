@@ -1,0 +1,14 @@
+.header {
+    background-color: #f0f0f0; /* Or any color you prefer */
+    width: 100%; /* Make the header span the entire width */
+    padding: 10px 0; /* Add some padding for spacing */
+    position: sticky; /* Optional: Make the header stick to the top on scroll */
+    top: 0; /* Required for sticky positioning */
+    z-index: 100; /* Ensure the header is above other content */
+  }
+  
+  .header-content {
+    max-width: 1200px; /* Optional: Limit the content width for larger screens */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 0 20px; /* Add some padding on the sides */
+  }
