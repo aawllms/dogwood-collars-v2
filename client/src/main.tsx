@@ -3,11 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import App from "./App.jsx";
-// import Cart from "./pages/CartProducts.js";
-// import Products from "./pages/ProductPage.js";
-// import ContactUs from "./pages/ContactUs.js";
-// import Review from "./pages/Review.js";
-// import SADashboard from "./pages/SADashboard.js";
+import Cart from "./pages/CartProducts.js";
+import Products from "./pages/ProductPage.js";
+import ContactUs from "./pages/ContactUs.js";
+import AboutUs from "./pages/AboutUs.js";
+import SADashboard from "./pages/SADashboard.js";
 import Home from "./pages/Home.js";
 
 const router = createBrowserRouter([
@@ -21,31 +21,30 @@ const router = createBrowserRouter([
       //   element: <SearchResource />,
       // },
       {
-        index: true,
         path: "/home",
         element: <Home />,
       },
-    //   {
-    //     path: "/cart",
-    //     element: <Cart />,
-    //   },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
 
-    //   {
-    //     path: "/products",
-    //     element: <Products />,
-    //   },
-    //   {
-    //     path: "/contact-us",
-    //     element: <ContactUs />,
-    //   },
-    //   {
-    //     path: "/review",
-    //     element: <Review />,
-    //   },
-    //   {
-    //     path: "/sa-dashboard",
-    //     element: <SADashboard />,
-    //   },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+        {
+          path: "/contact-us",
+          element: <ContactUs />,
+        },
+        {
+          path: "/sa-dashboard",
+          element: <SADashboard />,
+        },
     ],
   },
 ]);
