@@ -1,7 +1,7 @@
-import { signToken } from "../services/auth";
+// import { signToken } from "../services/auth";
 import { AuthenticationError } from "../services/auth";
 import { User, Product } from "../models/index";
-import { ProductDocument } from "../models/Products";
+// import { ProductDocument } from "../models/Products";
 
 const resolvers = {
   Query: {
