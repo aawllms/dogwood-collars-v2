@@ -1,31 +1,55 @@
 import Carousel from "react-bootstrap/Carousel";
-import dogwoodCollars from "../../public/dogwoodCollars.jpeg";
-import duca from "../../public/duca.jpeg";
-import dreya from "../../public/dreya.jpeg";
-import dogs from "../../public/dogs.jpeg";
-import whitespotted from "../../public/whitespotted.jpeg";
-import browndog from "../../public/browndog.png";
+import dogwoodCollars from "/dogwoodCollars.jpeg";
+import duca from "/duca.jpeg";
+import dreya from "/dreya.jpeg";
+import dogs from "/dogs.jpeg";
+import whitespotted from "/whitespotted.jpeg";
+import browndog from "/browndog.png";
 
 function Home() {
   return (
-    <Carousel>
-      <Carousel.Item>
-        <img src={dogwoodCollars} alt="First slide" />
+    <Carousel style={{ backgroundColor: "#7ecda", margin: "10px" }}>
+      <Carousel.Item style={{ height: "500px" }}>
+        <img
+          src={dogwoodCollars}
+          alt="First slide"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Carousel.Item>
-      <Carousel.Item>
-        <img src={duca} alt="Second slide" />
+      <Carousel.Item style={{ height: "500px" }}>
+        <img
+          src={duca}
+          alt="Second slide"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Carousel.Item>
-      <Carousel.Item>
-        <img src={dreya} alt="Third slide" />
+      <Carousel.Item style={{ height: "500px" }}>
+        <img
+          src={dreya}
+          alt="Third slide"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Carousel.Item>
-      <Carousel.Item>
-        <img src={dogs} alt="Fourth slide" />
+      <Carousel.Item style={{ height: "500px" }}>
+        <img
+          src={dogs}
+          alt="Fourth slide"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Carousel.Item>
-      <Carousel.Item>
-        <img src={whitespotted} alt="fifth slide" />
+      <Carousel.Item style={{ height: "500px" }}>
+        <img
+          src={whitespotted}
+          alt="fifth slide"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Carousel.Item>
-      <Carousel.Item>
-        <img src={browndog} alt="Sixth slide" />
+      <Carousel.Item style={{ height: "500px" }}>
+        <img
+          src={browndog}
+          alt="Sixth slide"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Carousel.Item>
     </Carousel>
   );

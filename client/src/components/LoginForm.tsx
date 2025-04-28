@@ -100,7 +100,8 @@ const LoginForm = ({}: { handleModalClose: () => void }) => {
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
-          variant="success"
+        //   variant="success"
+        style={{backgroundColor: "#152642", color: "#f2e3cb"}}
         >
           Submit
         </Button>

@@ -5,10 +5,10 @@ import { ProductDocument } from "../models/Products";
 
 const resolvers = {
   Query: {
-    getSingleUser: async (_parent: any, _args: any, context: any) => {
+    getSingleUser: async (_parent: unknown, _args: any, context: any) => {
       const foundUser = await User.findOne({
-        username: context.user.username,
-      });
+        email: context.user.username,
+      }).populate("cartProducts");
       if (!foundUser) {
         throw new AuthenticationError("Authentication Error");
       }
@@ -24,10 +24,10 @@ const resolvers = {
       }
     },
 
-    getUserByUsername: async (_parent: any, args: any, context: any) => {
+    getUserByEmail: async (_parent: any, args: any, context: any) => {
       if (context?.user) {
         const foundUser = await User.findOne({
-          username: args.username,
+          email: args.email,
         });
         if (!foundUser) {
           throw new AuthenticationError("User not found");
@@ -40,7 +40,7 @@ const resolvers = {
 
     getProduct: async (_parent: any, { productId }: any, context: any) => {
       if (!context.user) {
-        throw new AuthenticationError("You need to be logged in!");
+        throw new AuthenticationError("Please log in to see saved products");
       }
 
       try {
@@ -52,6 +52,23 @@ const resolvers = {
       } catch (error) {
         throw new Error("Error fetching product");
       }
+    },
+    getAllProducts: async (_parent: unknown, _args: unknown) => {
+      const getProducts = await Product.find();
+      return getProducts;
+    },
+    searchProducts: async (
+      _parent: unknown,
+      { searchTerm }: { searchTerm: string },
+      _context: unknown
+    ) => {
+      const products = await Product.find({
+        title: {
+          $regex: searchTerm,
+          $options: "i",
+        },
+      });
+      return products;
     },
   },
 };

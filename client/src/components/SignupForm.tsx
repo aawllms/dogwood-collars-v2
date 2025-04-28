@@ -101,7 +101,7 @@ const SignupForm = ({}: { handleModalClose: () => void }) => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your signup!
+          Something went wrong while creating your account. Please try again.
         </Alert>
 
         <Form.Group className="mb-3">
@@ -156,7 +156,6 @@ const SignupForm = ({}: { handleModalClose: () => void }) => {
             name="phoneNumber"
             onChange={handleInputChange}
             value={userFormData.phoneNumber || ""}
-            required
           />
         </Form.Group>
         <Form.Group className="mb-3">

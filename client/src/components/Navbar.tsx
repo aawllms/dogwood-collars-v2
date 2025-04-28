@@ -4,15 +4,29 @@ import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Auth from "../utils/Auth";
+import dogwoodlogo from "../../public/dogwoodlogo.png";
 
 const CombinedNavbar = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar
+        expand="lg"
+        bg="dark"
+        variant="dark"
+        // className="bg-body-tertiary"
+        style={{ color: "offwhite" }}
+      >
         <Container fluid>
-          <Navbar.Brand href="#">DOGWOOD COLLARS</Navbar.Brand>
+          <Navbar.Brand href="#">
+            <img
+              src={dogwoodlogo}
+              alt="Dogwood Collars Logo"
+              height="30" // Adjust the height as needed
+              className="d-inline-block align-top" // Bootstrap classes for alignment
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -46,7 +60,7 @@ const CombinedNavbar = () => {
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>
-                  Login/Sign Up
+                  Login/Create Account
                 </Nav.Link>
               )}
             </Nav>
@@ -66,10 +80,15 @@ const CombinedNavbar = () => {
             <Modal.Title id="signup-modal">
               <Nav variant="pills">
                 <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
+                  <Nav.Link
+                    eventKey="login"
+                    style={{ backgroundColor: "#152642" }}
+                  >
+                    Login
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                  <Nav.Link eventKey="signup"  style={{ backgroundColor: "#152642",color: "white" }}>Create Account</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
